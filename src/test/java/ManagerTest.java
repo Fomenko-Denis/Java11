@@ -74,4 +74,16 @@ public class ManagerTest {
         String[] expected = {"Movie II", "Movie I"};
         Assertions.assertArrayEquals(expected, actual);
     }
+    @Test
+    public void limTest() {
+        FilmsManager manager = new FilmsManager(3);
+        manager.add("Movie I");
+        manager.add("Movie II");
+        manager.add("Movie III");
+
+        String[] actual = manager.findAll();
+        String[] expected = {"Movie I", "Movie II", "Movie III"};
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
 }
